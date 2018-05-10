@@ -5,7 +5,9 @@
 # 3.The third line contains the product of the two numbers.
 #------------------------------------------------------------------------------#
 
-integerA = input()
-integerB = input()
+integerA = int(input())
+integerB = int(input())
 
-print(integerA + integerB, "\n", integerA - integerB, "\n", integerA * integerB)
+print(integerA + integerB)
+print(integerA - integerB)
+print(integerA * integerB)
