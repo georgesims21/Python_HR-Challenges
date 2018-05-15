@@ -19,29 +19,23 @@
 #     For each command of type print, print the list on a new line.
 #------------------------------------------------------------------------------#
 
-noLines = int(input())
 theList = []
 
-for ii in range(noLines):
-    action = input()
-    if(action == "insert"):
-        i = int(input())
-        e = int(input())
-        theList[i] = e
-    elif(action == "print"):
+for i in range(int(input())):
+    userChoice = input().split() #Splits input into seperate variables
+    for iiii in range(1,len(userChoice)):
+        userChoice[iiii] = int(userChoice[iiii]) #Converts str into ints
+    if(userChoice[0] == "insert"):
+        theList.insert(userChoice[1], userChoice[2])
+    elif(userChoice[0] == "print"):
         print(theList)
-    elif(action == "remove"):
-        e = int(input())
-        for item in items:
-            if item.startswith(e):
-                items.remove(item)
-                break
-    elif(action == "append"):
-        e = int(input())
-        theList.append(e)
-    elif(action == "sort"):
+    elif(userChoice[0] == "remove"):
+        theList.remove(userChoice[1])
+    elif(userChoice[0] == "append"):
+        theList.append(userChoice[1])
+    elif(userChoice[0] == "sort"):
         theList.sort()
-    elif(action == "pop"):
+    elif(userChoice[0] == "pop"):
         theList.pop()
-    elif(action == "reverse"):
-        theList[::-1]
+    elif(userChoice[0] == "reverse"):
+        theList.reverse()
