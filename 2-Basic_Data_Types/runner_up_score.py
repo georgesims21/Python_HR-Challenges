@@ -23,7 +23,7 @@ someVariable.reverse()
 
 highest = someVariable[0]
 
-for ii in range(0, len(someVariable)):  # Decrement avoiding checking itself
+for ii in range(0, len(someVariable)):
     if(someVariable[ii] < highest):
-         print(someVariable[ii])  # Save the first smallest int
+         print(someVariable[ii])  # Print the second largest int
          break
