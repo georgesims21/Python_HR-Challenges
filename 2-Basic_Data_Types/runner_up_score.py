@@ -13,11 +13,17 @@
 #------------------------------------------------------------------------------#
 
 myArray = []
-# for i in range(int(input())):
-#     someVariable = input().split()
 howMany = int(input())
 someVariable = input().split()
-for i in range(1, len(someVariable)):
-    myArray[i] = int(someVariable[i])
+for i in range(0, len(someVariable)):
+    someVariable[i] = int(someVariable[i])  # Convert str to int
 
-print(someVariable[0])
+someVariable.sort()  # Sort numerically
+someVariable.reverse()
+
+highest = someVariable[0]
+
+for ii in range(0, len(someVariable)):  # Decrement avoiding checking itself
+    if(someVariable[ii] < highest):
+         print(someVariable[ii])  # Save the first smallest int
+         break
