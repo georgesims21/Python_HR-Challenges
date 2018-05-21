@@ -20,8 +20,16 @@
 myDict = {}
 for i in range(int(input())):
     name = input()
-    maths, physics, chemistry = float(input())
+    results = input().split()
+    maths = float(results[0])
+    physics = float(results[1])
+    chemistry = float(results[2])
     myDict.setdefault(name, [])
-    myDict[name].append(maths, physics, chemistry)
+    myDict[name].append(maths)
+    myDict[name].append(physics)
+    myDict[name].append(chemistry)
 
-print(myDict)
+
+searchFor = input()
+for i in range(2):
+
