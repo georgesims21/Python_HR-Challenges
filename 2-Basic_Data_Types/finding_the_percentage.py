@@ -17,21 +17,16 @@
 #   correct to 2 decimal places.
 #------------------------------------------------------------------------------#
 
-myDict = {}
+studentFinalResults = {}
 for i in range(int(input())):
-    results = input().split()
-    name = results[0]
-    maths = float(results[1])
-    physics = float(results[2])
-    chemistry = float(results[3])
-    myDict.setdefault(name, [])
-    myDict[name].append(maths)
-    myDict[name].append(physics)
-    myDict[name].append(chemistry)
-
-
+    student = input().split()
+    #  Arrange input into 1 dict key and the scores into a separate list as value
+    studentFinalResults.setdefault(student[0], []).append([float(student[1]), +
+    float(student[2]), float(student[3])])
 searchFor = input()
-testing = float((myDict[searchFor][0] + myDict[searchFor][1] +
-                 myDict[searchFor][2]) / 3)
-
+#  Create average percentage score of the 3 grades
+testing = float((studentFinalResults[searchFor][0][0] +
+                 studentFinalResults[searchFor][0][1] +
+                 studentFinalResults[searchFor][0][2]) / 3)
+#  Print to 2 decimal places
 print("%.2f" % testing)
