@@ -16,13 +16,7 @@
 #   Physics; if there are multiple students, order their names alphabetically
 #   and print each one on a new line.
 #------------------------------------------------------------------------------#
-def testing(theList, value, index):
-    newList = []
-    for i in range(len(theList)):
-        if(theList[i][0] == value):
-            newList.append(theList[i][1])
-    newList.sort()
-    print(newList)
+
 gradesList = []
 
 for i in range(int(input())):
@@ -30,11 +24,17 @@ for i in range(int(input())):
     grade = float(input())
     gradesList.append([grade, name])  # Create nested list for each student
 
-gradesList.sort()
-lowest = gradesList[0]
-print(gradesList)
+gradesList.sort()  # Sort numerically ascending
+lowest = gradesList[0][0]
+newList = []
 
 for ii in range(len(gradesList)):
-    if(gradesList[ii] > lowest):
-        testing(gradesList, gradesList[ii], ii)
+    if gradesList[ii][0] > lowest:
+        newVariable = gradesList[ii][0]  # Assign second lowest value to variable
+        for iii in range(ii, len(gradesList)):  # Avoid checking lowest
+            if gradesList[iii][0] == newVariable:
+                newList.append(gradesList[iii][1])  # Append to new list all of the second lowest values
         break
+newList.sort()  # Sort alphabetically
+for item in newList:
+    print(item)
