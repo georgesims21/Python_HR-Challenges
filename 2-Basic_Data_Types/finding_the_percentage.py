@@ -19,11 +19,11 @@
 
 myDict = {}
 for i in range(int(input())):
-    name = input()
     results = input().split()
-    maths = float(results[0])
-    physics = float(results[1])
-    chemistry = float(results[2])
+    name = results[0]
+    maths = float(results[1])
+    physics = float(results[2])
+    chemistry = float(results[3])
     myDict.setdefault(name, [])
     myDict[name].append(maths)
     myDict[name].append(physics)
@@ -31,5 +31,7 @@ for i in range(int(input())):
 
 
 searchFor = input()
-for i in range(2):
+testing = float((myDict[searchFor][0] + myDict[searchFor][1] +
+                 myDict[searchFor][2]) / 3)
 
+print("%.2f" % testing)
