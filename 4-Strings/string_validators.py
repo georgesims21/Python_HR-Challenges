@@ -4,7 +4,7 @@
 #    Your task is to find out if the string contains: alphanumeric characters,
 #    alphabetical characters, digits, lowercase and uppercase characters.
 # Input Format:
-#    A single line containing a string .
+#    A single line containing a string S.
 # Constraints:
 #   0 < len(S) < 1000
 # Output Format:
@@ -18,28 +18,22 @@
 #   In the fifth line, print True if has any uppercase characters. Otherwise,
 #   print False.
 #------------------------------------------------------------------------------#
+
 boolArray = [False, False, False, False, False]
-# for i in range(5):
-#     print(boolArray[i])
-# boolArray[1] = 0 # isNumeric
-# boolArray[2] = 0 # isAlphabet
-# boolArray[3] = 0 # isDigit
-# boolArray[4] = 0 # isLower
-# boolArray[5] = 0 # isUpper
 
 string = input()
 
 for char in string:
-    if(char.isalnum):
-        boolArray[0] = True
-    if(char.isalpha):
-        boolArray[1] = True
-    if(char.isdigit):
-        boolArray[2] = True
-    if(char.islower):
-        boolArray[3] = True
-    if(char.isupper):
-        boolArray[4] = True
+    if(char.isalnum()):
+        boolArray[0] = True # isNumeric
+    if(char.isalpha()):
+        boolArray[1] = True # isAlphabet
+    if(char.isdigit()):
+        boolArray[2] = True # isDigit
+    if(char.islower()):
+        boolArray[3] = True # isLower
+    if(char.isupper()):
+        boolArray[4] = True # isUpper
 
 for i in range(5):
     print(boolArray[i])
