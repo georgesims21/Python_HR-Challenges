@@ -11,12 +11,12 @@
 #   Print the text wrapped paragraph.
 #------------------------------------------------------------------------------#
 
+import textwrap
+
 inputString = input()
 width = int(input())
-counter = 1
 
-for i in range(len(inputString)):
-    print(inputString[i])
-    # if(i == width * counter):
-    #     print("\n")
-    #     counter += 1
+# Converts string into list with 'width' sized chars of same string 
+inputString = textwrap.wrap(inputString, width)
+for i in inputString:
+    print(i)
