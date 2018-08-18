@@ -13,26 +13,30 @@
 #     Output the design pattern.
 #------------------------------------------------------------------------------#
 
-def welcomeFunc(w, l, dash, wArray):
-    tempW = w - 7 # WELCOME == 7 chars
-    tempW = tempW / 2 # For one side
-    for i in range(int(tempW)):
-        wArray.insert(0, dash)
-        wArray.append(dash)
-    for ii in range(len(wArray)):
-        print(wArray[ii], end=""),
+def welcome_line(width):
+    welcome = "WELCOME"
+    temp = int((width - 7) / 2)  # WELCOME = 7 chars, / 2 for each side
+    welcome = ("-" * temp) + welcome + ("-" * temp)  # Adds calculated amount of "-"'s to each side of WELCOME
+    return welcome
 
-def upAndDown(w, l, dividor, dash):
-    tempL = l - 1 # Welcome line == 1 line
-    tempL = tempL / 2
-    for i in range(tempL):
-        
+def pattern_line(width, counter):
+    pattern = ".|."
+    new_pattern = (".|." * counter) + pattern + (".|." * counter)  # Evenly adds a ".|." to each side using iteration
+    Wtemp = int((width - len(new_pattern)) / 2)  # To work out how many "-"'s are needed to fill width requirement
+    new_pattern = ("-" * Wtemp) + new_pattern + ("-" * Wtemp)
+    return new_pattern
 
-wArray = ["WELCOME"]
-dividor = [".|."]
-dash = "-"
 
-length = int(input())
-width = int(input())
+integers = input().split()
+n = int(integers[0])
+m = int(integers[1])
 
-welcomeFunc(width, length, dash, wArray)
+remainingN = int((n - 1) / 2)  # Amount of lines above and below the 'WELCOME line'
+
+for i in range(remainingN):
+    print(pattern_line(m, i))
+
+print(welcome_line(m))
+
+for i in range(remainingN - 1, -1, -1):
+    print(pattern_line(m, i))
