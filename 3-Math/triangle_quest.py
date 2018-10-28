@@ -19,12 +19,6 @@
 # Output Format:
 #     Print lines as explained above.
 #------------------------------------------------------------------------------#
-answer = 0
-for i in range(0, int(input())):
-    left = answer * 10
-    right = (i * 10)
-    for ii in range(i):
-
-    answer = left + right
+for i in range(1, int(input())): #More than 2 lines will result in 0 score. Do not leave a blank line also
     print()
 
