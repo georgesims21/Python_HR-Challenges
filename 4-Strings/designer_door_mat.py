@@ -38,5 +38,5 @@ for i in range(remainingN):
 
 print(welcome_line(m))
 
-for i in range(remainingN - 1, -1, -1):
+for i in range(remainingN -1, -1, -1):
     print(pattern_line(m, i))
